@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>grails-portlets-liferay</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>com.springsource.sts.grails.core.nature</nature>
+		<nature>org.eclipse.jdt.groovy.core.groovyNature</nature>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>portlets-0.7-grails-app-i18n</name>
+			<type>2</type>
+			<location>C:/Users/mbe/.grails/1.2-M4/projects/grails-portlets-liferay/plugins/portlets-0.7/grails-app/i18n</location>
+		</link>
+		<link>
+			<name>portlets-0.7-src-java</name>
+			<type>2</type>
+			<location>C:/Users/mbe/.grails/1.2-M4/projects/grails-portlets-liferay/plugins/portlets-0.7/src/java</location>
+		</link>
+		<link>
+			<name>tomcat-1.2-M4-src-groovy</name>
+			<type>2</type>
+			<location>C:/Users/mbe/.grails/1.2-M4/projects/grails-portlets-liferay/plugins/tomcat-1.2-M4/src/groovy</location>
+		</link>
+	</linkedResources>
+</projectDescription>
