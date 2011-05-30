@@ -19,15 +19,15 @@ grails.project.dependency.resolution = {
         //mavenRepo "http://repository.jboss.com/maven2/"
     }
     dependencies {
-    	provided 'portlet-api:portlet-api:1.0'
-    	runtime('org.springframework:spring-webmvc-portlet:2.5.6.SEC01') {
+    	provided 'javax.portlet:portlet-api:2.0'
+    	runtime('org.springframework:spring-webmvc-portlet:3.0.5.RELEASE') {
     		excludes 'spring-beans'
     		excludes 'spring-context'
     		excludes 'spring-core'
     		excludes 'spring-web'
     		excludes 'spring-webmvc'
     	}
-		//test 'org.jmock:jmock-junit3:2.5.1'
+		// test 'org.jmock:jmock-junit3:2.5.1'
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
         // runtime 'mysql:mysql-connector-java:5.1.5'
     }
