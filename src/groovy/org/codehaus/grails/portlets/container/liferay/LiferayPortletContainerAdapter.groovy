@@ -1,15 +1,16 @@
 package org.codehaus.grails.portlets.container.liferay;
 
-import org.codehaus.grails.portlets.container.AbstractPortletContainerAdapter;
-
-import javax.portlet.PortletConfig;
-import javax.portlet.PortletContext;
-import javax.portlet.PortletRequest;
-import javax.portlet.PortletResponse;
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.portlet.PortletConfig
+import javax.portlet.PortletContext
+import javax.portlet.PortletRequest
+import javax.portlet.PortletResponse
+import javax.servlet.ServletConfig
+import javax.servlet.ServletContext
+import javax.servlet.http.HttpServletRequest
+import javax.servlet.http.HttpServletResponse
+import org.codehaus.grails.portlets.container.AbstractPortletContainerAdapter
+import org.springframework.web.portlet.context.PortletApplicationContextUtils
+import org.codehaus.groovy.grails.commons.spring.GrailsWebApplicationContext
 
 /**
  * Accommodates Liferay container specific operations.
@@ -20,7 +21,8 @@ import javax.servlet.http.HttpServletResponse;
 public class LiferayPortletContainerAdapter extends AbstractPortletContainerAdapter {
 
    public ServletContext getServletContext(PortletContext context) {
-      return context.getServerInfo().servletContext;
+      GrailsWebApplicationContext gwac = (GrailsWebApplicationContext)PortletApplicationContextUtils.getWebApplicationContext(context)
+      return gwac.getServletContext()
    }
 
    public ServletConfig getServletConfig(PortletConfig config) {
@@ -28,10 +30,10 @@ public class LiferayPortletContainerAdapter extends AbstractPortletContainerAdap
    }
 
    public HttpServletRequest getHttpServletRequest(PortletRequest portletRequest) throws UnsupportedOperationException {
-      return portletRequest.getRealRequest();
+      return portletRequest.getHttpServletRequest();
    }
 
    public HttpServletResponse getHttpServletResponse(PortletResponse portletResponse) throws UnsupportedOperationException {
-      return portletResponse.getRealResponse();
+      return portletResponse.getHttpServletResponse();
    }
 }
