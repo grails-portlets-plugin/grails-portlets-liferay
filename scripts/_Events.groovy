@@ -3,7 +3,6 @@ import org.codehaus.groovy.grails.commons.ConfigurationHolder as CH
 import groovy.xml.StreamingMarkupBuilder
 import org.springframework.core.io.Resource
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver
-import org.codehaus.grails.portlets.GrailsDispatcherPortlet
 
 // http://www.liferay.com/documentation/liferay-portal/6.0/development/-/ai/anatomy-of-a-portlet
 
@@ -69,7 +68,7 @@ def generatePortletXml(Resource[] portletFiles) {
                   'value'('org.codehaus.grails.portlets.GrailsPortletApplicationContext')
                }
                'init-param' {
-                  'name'(GrailsDispatcherPortlet.PORTLET_CLASS_PARAM)
+                  'name'("grailsPortletClass")
                   'value'(className)
                }
                'init-param' {
