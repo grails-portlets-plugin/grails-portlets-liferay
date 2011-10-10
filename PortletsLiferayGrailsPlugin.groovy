@@ -1,11 +1,11 @@
 class PortletsLiferayGrailsPlugin {
     // the plugin version
-    def version = "0.3"
+    def version = "0.4"
     // the version or versions of Grails the plugin is designed for.
 	// Grails 1.2 is required since we use dependency management features introduced in this version
     def grailsVersion = "1.3 > *"
     // the other plugins this plugin depends on
-    def dependsOn = [portlets:"0.8 > * "]
+    def dependsOn = [portlets:"0.9 > * "]
     // resources that are excluded from plugin packaging
     def pluginExcludes = [
             "grails-app/views/error.gsp"

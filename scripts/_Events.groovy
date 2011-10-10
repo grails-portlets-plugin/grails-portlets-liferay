@@ -98,8 +98,45 @@ def generatePortletXml(Resource[] portletFiles) {
                      'role-name'(role.key)
                   }
                }
+			   if (hasProperty('events', instance)){
+				   instance.events.publish?.each { event ->
+					   'supported-publishing-event' {
+						   'name'(event)
+					   }
+				   }
+				   instance.events.process?.each { event ->
+					   'supported-processing-event' {
+						   'name'(event)
+					   }
+				   }
+			   }
+			   if (hasProperty('public_render_params', instance)){
+				   instance.public_render_params.each { prp ->
+					   'supported-public-render-parameter'(prp)
+				   }
+			   }
             }
          }
+		 //add any defined events
+		 if (CH.config.liferay.events) {
+			 CH.config.liferay.events.each { event ->
+				 "event-definition" {
+				 	"name"(event.key)
+					 if (event.value?.type) {
+						 "value-type"(event.value.type)
+					 }
+				 }
+			 }
+		 }
+		 //add any defined public render parameters
+		 if (CH.config.liferay.public_render_parameters) {
+			 CH.config.liferay.public_render_parameters.each { prp ->
+				 "public-render-parameter" {
+					 "identifier"(prp.key)
+					 "name"(prp.value)
+				}
+			 }
+		 }
       }
    }
 
