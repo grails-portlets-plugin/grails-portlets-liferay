@@ -2,9 +2,9 @@
 *Db.properties
 *Db.script
 .settings
-eclipse
-stacktrace.log
+*.log
+*.zip
+plugin.xml
 target
-/plugins
-/web-app/plugins
-/web-app/WEB-INF/classes
+/web-app
+/.link_to_grails_plugins
